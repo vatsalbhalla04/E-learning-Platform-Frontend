@@ -5,40 +5,32 @@ import Logo from "../../../logo";
 export default function ButtonContainer() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // async function home() {}
-  // async function courses() {}
-  // async function AboutUs() {}
-  // async function Price() {}
-  // async function Contact() {}
-  // async function signUp() {}
-  // async function Login() {}
-
   return (
-    <div className="p-2">
-      {/* Nav Row */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+    <div className="p-2 w-full">
+      {/* Navbar wrapper */}
+      <div className="flex flex-wrap items-center justify-between gap-4">
         {/* Logo */}
-        <div className="flex justify-center sm:justify-center mb-4 sm:mb-0">
+        <div className="shrink-0">
           <Logo />
         </div>
 
-        {/* Nav buttons */}
-        <div className="hidden sm:flex flex-grow justify-center space-x-3">
-          <ButtonComponent onClick={()=>{}} text="Home" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Courses" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="About Us" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Pricing" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Contact" variant="secondary" />
+        {/* Nav buttons (centered in desktop) */}
+        <div className="hidden sm:flex flex-wrap justify-center gap-2 flex-1">
+          <ButtonComponent onClick={() => {}} text="Home" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Courses" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="About Us" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Pricing" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Contact" variant="secondary" />
         </div>
 
         {/* Auth buttons */}
-        <div className="flex justify-center sm:justify-end space-x-3 mt-3 sm:mt-0">
-          <ButtonComponent onClick={()=>{}} text="Sign Up" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Login" variant="primary" />
+        <div className="flex gap-2 shrink-0">
+          <ButtonComponent onClick={() => {}} text="Sign Up" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Login" variant="primary" />
         </div>
 
-        {/* Mobile hamburger */}
-        <div className="sm:hidden flex justify-end w-full mt-2">
+        {/* Hamburger only on small screens */}
+        <div className="sm:hidden ml-auto">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 border rounded-md text-gray-700 hover:bg-gray-100"
@@ -56,14 +48,14 @@ export default function ButtonContainer() {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile dropdown nav buttons */}
       {isOpen && (
         <div className="sm:hidden mt-4 flex flex-col space-y-2">
-          <ButtonComponent onClick={()=>{}} text="Home" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Courses" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="About Us" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Pricing" variant="secondary" />
-          <ButtonComponent onClick={()=>{}} text="Contact" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Home" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Courses" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="About Us" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Pricing" variant="secondary" />
+          <ButtonComponent onClick={() => {}} text="Contact" variant="secondary" />
         </div>
       )}
     </div>
